@@ -2,12 +2,13 @@ import { useState } from "react";
 import { data } from "./data";
 import logo from './images/logo.svg';
 import avatar from './images/image-avatar.png';
-import {FaCart} from 'react-icons';
+import { IoCartOutline } from "react-icons/io5";
 
 function Header() {
   return (
     <>
-      <div>
+      <header>
+      <div className="flex items-center justify-between p-8 border-b">
         <img src={logo} alt=""/>
 
         <nav>
@@ -23,10 +24,11 @@ function Header() {
 
       <div>
         <ul>
-          <li><button><FaCart /></button></li>
+          <li><button><IoCartOutline /></button></li>
           <li><img src={avatar} alt="" /></li>
         </ul>
       </div>
+      </header>
     </>
   )
 }
@@ -38,7 +40,7 @@ function App() {
 
   return (
     <>
-      <h1>{data.length}</h1>
+      <Header />
     </>
   );
 }
